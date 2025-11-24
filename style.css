@@ -1,0 +1,196 @@
+ /* --- Reset & Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111827; /* Dark gray for text */
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 20px;
+        }
+
+        /* --- Component Container --- */
+        .cr-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Section --- */
+        .cr-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .cr-title {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #000000;
+        }
+
+        .cr-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cr-cta-button:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .cr-cta-icon {
+            font-size: 14px;
+        }
+
+        /* --- Grid Layout --- */
+        .cr-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 Columns by default */
+            gap: 24px;
+        }
+
+        /* --- Review Card --- */
+        .cr-card {
+            background-color: #F9FAFB; /* Very light gray background */
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cr-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Card Header: Company & Stars */
+        .cr-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .cr-company-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #6B7280; /* Muted gray for company name */
+        }
+        
+        .cr-company-brand i {
+            font-size: 20px;
+        }
+
+        .cr-rating-stars {
+            color: #000000; /* Black stars */
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        
+        .cr-rating-stars .cr-star-empty {
+            color: #D1D5DB; /* Gray for empty stars */
+        }
+
+        /* Card Content Split */
+        .cr-card-body {
+            display: grid;
+            grid-template-columns: 150px 1fr; /* Fixed width for profile, rest for text */
+            gap: 20px;
+            padding-top: 24px;
+            border-top: 1px solid #E5E7EB; /* Subtle divider line */
+        }
+
+        /* Profile Section */
+        .cr-profile-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cr-avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #e5e7eb; /* Placeholder color */
+        }
+
+        .cr-author-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cr-author-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #111827;
+            margin-bottom: 2px;
+        }
+
+        .cr-author-role {
+            font-size: 13px;
+            color: #6B7280;
+            line-height: 1.4;
+        }
+
+        /* Review Text Section */
+        .cr-review-content {
+            font-size: 18px;
+            color: #4B5563; /* Readable gray */
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 900px) {
+            .cr-reviews-grid {
+                grid-template-columns: 1fr; /* 1 Column on tablets/mobile */
+            }
+            
+            .cr-card-body {
+                grid-template-columns: 1fr; /* Stack profile and text */
+                gap: 16px;
+            }
+
+            .cr-profile-wrapper {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cr-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .cr-title {
+                font-size: 36px;
+            }
+            
+            .cr-card {
+                padding: 24px;
+            }
+        }
